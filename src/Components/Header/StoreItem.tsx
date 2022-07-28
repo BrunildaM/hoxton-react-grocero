@@ -14,7 +14,7 @@ type Props = {
 
 export function getImagePath (item: SingleItem) {
     const imgId = item.id.toString().padStart(3, "0")
-    const imgName = item.name.replaceAll(' ', '-')
+    const imgName = item.name
   
     return `/assets/icons/${imgId}-${imgName}.svg`
   }
@@ -23,7 +23,7 @@ function StoreItem({item}:Props) {
     return (
         <li>
             <div className="store--item-icon">
-                <img alt='' src= {getImagePath(item)}/>
+                <img alt={item.name} src= {getImagePath(item)}/>
             </div>
             <button>Add to cart</button>
         </li>
