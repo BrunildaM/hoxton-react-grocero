@@ -29,7 +29,7 @@
         id: 4,
         name: "apricot",
         price: 0.61,
-        amountInCart: 5,
+        amountInCart: 0,
       },
       {
         id: 5,

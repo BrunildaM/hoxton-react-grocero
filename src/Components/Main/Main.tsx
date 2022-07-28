@@ -10,10 +10,11 @@ type SingleItem = {
 
  type Props = {
     itemsInCart: SingleItem[]
+    getTotalPrice: () => string
  }
 
 
-function Main({itemsInCart}: Props ) {
+function Main({itemsInCart, getTotalPrice}: Props ) {
     return (
         <main id="cart">
 
@@ -23,7 +24,7 @@ function Main({itemsInCart}: Props ) {
                 <CartList itemsInCart={itemsInCart} />
             </div>
 
-            <TotalPrice />
+            <TotalPrice getTotalPrice={getTotalPrice} />
 
         </main>
     )

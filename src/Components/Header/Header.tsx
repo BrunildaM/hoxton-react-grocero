@@ -13,7 +13,7 @@ type SingleItem = {
     getImagePath: (item: SingleItem) => string
 }
 
-function Header({store, getImagePath}: Props) {
+function Header({store}: Props) {
     return (
         <header id="store">
             <h1>Grocero</h1>
