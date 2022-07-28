@@ -10,14 +10,15 @@ type SingleItem = {
 
  type Props = {
     store: SingleItem []
+    addToCart: (item: SingleItem)=> void
 }
 
 
-function StoreList({store}: Props) {
+function StoreList({store, addToCart}: Props) {
     return (
         <ul className="item-list store--item-list">
              {store.map ((item: { id: number; name: string; price: number; amountInCart: number }) =>
-            <StoreItem key={item.id} item={item} />
+            <StoreItem key={item.id} item={item}  addToCart={addToCart}/>
              )}
         </ul>
     )

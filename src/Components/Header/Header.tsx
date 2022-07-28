@@ -11,13 +11,14 @@ type SingleItem = {
  type Props = {
     store: SingleItem []
     getImagePath: (item: SingleItem) => string
+    addToCart:(item: SingleItem)=> void
 }
 
-function Header({store}: Props) {
+function Header({store, addToCart}: Props) {
     return (
         <header id="store">
             <h1>Grocero</h1>
-            <StoreList store={store}/>
+            <StoreList store={store} addToCart={addToCart}/>
         </header>
     )
 }

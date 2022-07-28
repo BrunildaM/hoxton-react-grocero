@@ -9,6 +9,7 @@ type SingleItem = {
 
 type Props = {
     item: SingleItem
+    addToCart: (item: SingleItem)=> void
 }
 
 
@@ -19,13 +20,14 @@ export function getImagePath (item: SingleItem) {
     return `/assets/icons/${imgId}-${imgName}.svg`
   }
 
-function StoreItem({item}:Props) {
+function StoreItem({item, addToCart}:Props) {
     return (
         <li>
             <div className="store--item-icon">
                 <img alt={item.name} src= {getImagePath(item)}/>
             </div>
-            <button>Add to cart</button>
+            <button
+            onClick={() => addToCart(item)}>Add to cart</button>
         </li>
     )
 }
