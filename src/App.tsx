@@ -49,12 +49,8 @@ function App() {
   function removeFromCart (item:SingleItem) {
     let storeCopy = JSON.parse(JSON.stringify(store))
     const match = storeCopy.find((itemInCart: SingleItem) => itemInCart.id === item.id)
-
-    if (match.amountInCart === 1) {
-      storeCopy = storeCopy.filter((itemInCart: SingleItem) => itemInCart.id !== item.id)
-    } else {
       match.amountInCart--
-    }
+  
     setStore(storeCopy)
 
   }
